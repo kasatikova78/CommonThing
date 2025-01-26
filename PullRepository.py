@@ -9,7 +9,7 @@ def CloneRepository(remote_repository_path, local_repository_path):
     print("Cloning:", local_repository_path)
     while True:
         try:
-            git.Repo.clone_from(remote_repository_path, local_repository_path)
+            git.Repo.clone_from(remote_repository_path, local_repository_path, depth = 1)
             break
         except Exception as exception:
             print(traceback.format_exc())
